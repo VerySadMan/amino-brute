@@ -58,7 +58,7 @@ def start_brute(auth_type):
 		x.start()
 		time.sleep(0.075)
 		
-	time.sleep(10)
+	time.sleep(5)
 	x.join()
 
 
