@@ -4,7 +4,6 @@ Brute for amino
 
 # Инструкция:
 ## Для начала устанавливаем зависимости(позже облегчим процесс):
-### pip install colorama
 ### pip install pyfiglet
 ### pip install requests
 ## Теперь скачиваем репозиторий:
