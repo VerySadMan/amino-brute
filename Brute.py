@@ -2,6 +2,7 @@ import requests
 import pyfiglet
 import threading
 import time
+import os
 
 
 out = pyfiglet.figlet_format("S.W.M", font="slant")
@@ -14,6 +15,7 @@ recaptcha_challenge = "03AOLTBLTAc9t-dPiTwwy6Oq2PvB0jIa-HAQjbo3Q6Grjm89PyR7SLSuD
 
 
 def start():
+	os.system('clear')
 	print(out)
 	print("----------------t.me/post11x----------------")
 	auth_type = int(input('1-Брут по почте\n2-Брут по номеру телефона.\n\n[S.W.M] -- > '))
