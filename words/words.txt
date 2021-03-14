@@ -8,5 +8,3 @@ sdf
 fr
 dfdsferf
 erefret
-swmTOP
-swmTEST
