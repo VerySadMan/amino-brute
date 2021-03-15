@@ -1,2 +1,4 @@
 pyfiglet==0.7
 aiohttp==3.7.4
+asyncio==3.4.3
+configparser==5.0.2
